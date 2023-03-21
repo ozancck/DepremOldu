@@ -12,11 +12,11 @@ struct HomeView: View {
 
     var body: some View {
         VStack {
-            ForEach(earthquakesService.earthquakes, id: \.self) { element in
-                if Double(element.ml)! > 3.5 {
-                    Text(element.date)
+            ScrollView {
+                ForEach(earthquakesService.earthquakes, id: \.self) { element in
+
+                    CellView(location: element.location, date: element.date, time: element.time, magnitude: element.ml)
                 }
-                
             }
         }.onAppear {
             earthquakesService.fetchEarthquakes()
