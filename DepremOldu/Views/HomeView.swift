@@ -11,14 +11,20 @@ struct HomeView: View {
     @StateObject var earthquakesService = EarhtquakesService()
 
     var body: some View {
-        VStack {
-            ScrollView {
-                ForEach(earthquakesService.earthquakes, id: \.self) { element in
+        NavigationStack{
+            VStack {
+                List(earthquakesService.earthquakes, id: \.self) { element in
                     CellView(location: element.location, date: element.date, time: element.time, magnitude: element.ml)
-                }
+                        
+                }.listStyle(.inset)
+                    .refreshable {
+                        earthquakesService.fetchEarthquakes()
+                    }
+                    .navigationTitle("Tüm Depremler")
+
+            }.onAppear {
+                earthquakesService.fetchEarthquakes()
             }
-        }.onAppear {
-            earthquakesService.fetchEarthquakes()
         }
     }
 }
