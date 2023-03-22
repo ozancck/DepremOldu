@@ -14,7 +14,6 @@ struct HomeView: View {
         VStack {
             ScrollView {
                 ForEach(earthquakesService.earthquakes, id: \.self) { element in
-
                     CellView(location: element.location, date: element.date, time: element.time, magnitude: element.ml)
                 }
             }

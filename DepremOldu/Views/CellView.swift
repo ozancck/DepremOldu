@@ -30,6 +30,7 @@ struct CellView: View {
                         .italic()
                         .foregroundColor(.black)
                 }
+                .frame(width: UIScreen.main.bounds.width * 0.5)
                 .padding(.leading)
                 .foregroundColor(.white)
                 
@@ -48,7 +49,7 @@ struct CellView: View {
                 .padding()
             }
             .frame(width: UIScreen.main.bounds.width * 0.9)
-            .background(Color("redColor"))
+            .background(.linearGradient(Gradient(colors: [Color("yellowColor"), Color("redColor")]), startPoint: .trailing, endPoint: .leading))
             .cornerRadius(20)
         }
         if (6.0 > Double(magnitude)! && Double(magnitude)! > 2.0){
@@ -65,6 +66,7 @@ struct CellView: View {
                         .italic()
                         .foregroundColor(.black)
                 }
+                .frame(width: UIScreen.main.bounds.width * 0.5)
                 .padding(.leading)
                 .foregroundColor(.white)
                 
@@ -100,6 +102,7 @@ struct CellView: View {
                         .italic()
                         .foregroundColor(.black)
                 }
+                .frame(width: UIScreen.main.bounds.width * 0.5)
                 .padding(.leading)
                 .foregroundColor(.white)
                 
