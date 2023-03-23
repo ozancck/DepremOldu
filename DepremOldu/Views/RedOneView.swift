@@ -23,16 +23,23 @@ struct RedOneView: View {
             .pickerStyle(.segmented)
 
             VStack {
-                List(earthquakesService.earthquakes, id: \.self) { element in
-                    if Double(element.ml)! > Double(magnitudes[selectedMagnitude])! {
-                        CellView(location: element.location, date: element.date, time: element.time, magnitude: element.ml)
+                ScrollView {
+                    VStack {
+                        ForEach(earthquakesService.earthquakes, id: \.id) { element in
+                            if Double(element.ml)! > Double(magnitudes[selectedMagnitude])! {
+                                NavigationLink {
+                                    DetailsView(name: element.location, latitude: element.latitude, longitude: element.longitude, magnitude: element.ml, depth: element.depth, date: element.date, time: element.time)
+                                } label: {
+                                    CellView(location: element.location, date: element.date, time: element.time, magnitude: element.ml)
+                                }
+                            }
+                        }
                     }
-
-                }.listStyle(.inset)
-                    .refreshable {
-                        earthquakesService.fetchEarthquakes()
-                    }
-                    .navigationTitle("Son Depremler")
+                }
+                .navigationBarTitle("Büyük Depremler")
+                .refreshable(action: {
+                    earthquakesService.fetchEarthquakes()
+                })
 
             }.onAppear {
                 earthquakesService.fetchEarthquakes()

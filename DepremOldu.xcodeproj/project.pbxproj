@@ -11,6 +11,7 @@
 		3120A04E29CA119700A0B55C /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3120A04D29CA119700A0B55C /* CellViewModel.swift */; };
 		31377BD829CB537B00FDD8FC /* MyTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31377BD729CB537B00FDD8FC /* MyTabView.swift */; };
 		31377BDA29CB577E00FDD8FC /* RedOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31377BD929CB577E00FDD8FC /* RedOneView.swift */; };
+		3160542329CC959C00407DED /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3160542229CC959C00407DED /* DetailsView.swift */; };
 		31E4260929C7B2FA00B22D10 /* DepremOlduApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E4260829C7B2FA00B22D10 /* DepremOlduApp.swift */; };
 		31E4260B29C7B2FA00B22D10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E4260A29C7B2FA00B22D10 /* ContentView.swift */; };
 		31E4260D29C7B2FB00B22D10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31E4260C29C7B2FB00B22D10 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 		31E4261B29C7B36800B22D10 /* EarthQuakesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E4261A29C7B36800B22D10 /* EarthQuakesService.swift */; };
 		31E4261E29C7B38D00B22D10 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 31E4261D29C7B38D00B22D10 /* Alamofire */; };
 		31E4262129C7B6FB00B22D10 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E4262029C7B6FB00B22D10 /* HomeView.swift */; };
+		31FCE3F329CCA2F600415B84 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FCE3F229CCA2F600415B84 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,7 @@
 		3120A04D29CA119700A0B55C /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		31377BD729CB537B00FDD8FC /* MyTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabView.swift; sourceTree = "<group>"; };
 		31377BD929CB577E00FDD8FC /* RedOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedOneView.swift; sourceTree = "<group>"; };
+		3160542229CC959C00407DED /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		31E4260529C7B2FA00B22D10 /* DepremOldu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DepremOldu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E4260829C7B2FA00B22D10 /* DepremOlduApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepremOlduApp.swift; sourceTree = "<group>"; };
 		31E4260A29C7B2FA00B22D10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		31E4261729C7B33100B22D10 /* EarthquakeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeModel.swift; sourceTree = "<group>"; };
 		31E4261A29C7B36800B22D10 /* EarthQuakesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthQuakesService.swift; sourceTree = "<group>"; };
 		31E4262029C7B6FB00B22D10 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		31FCE3F229CCA2F600415B84 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,12 +110,22 @@
 		31E4261F29C7B6EF00B22D10 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				31FCE3F129CCA2E500415B84 /* DetailsView */,
 				31E4262029C7B6FB00B22D10 /* HomeView.swift */,
 				3120A04B29CA0E1B00A0B55C /* CellView.swift */,
 				31377BD729CB537B00FDD8FC /* MyTabView.swift */,
 				31377BD929CB577E00FDD8FC /* RedOneView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		31FCE3F129CCA2E500415B84 /* DetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				3160542229CC959C00407DED /* DetailsView.swift */,
+				31FCE3F229CCA2F600415B84 /* MapView.swift */,
+			);
+			path = DetailsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,7 +205,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				31E4260B29C7B2FA00B22D10 /* ContentView.swift in Sources */,
+				3160542329CC959C00407DED /* DetailsView.swift in Sources */,
 				31E4260929C7B2FA00B22D10 /* DepremOlduApp.swift in Sources */,
+				31FCE3F329CCA2F600415B84 /* MapView.swift in Sources */,
 				31377BD829CB537B00FDD8FC /* MyTabView.swift in Sources */,
 				31377BDA29CB577E00FDD8FC /* RedOneView.swift in Sources */,
 				3120A04C29CA0E1B00A0B55C /* CellView.swift in Sources */,

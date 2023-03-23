@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Earthquake: Codable, Hashable {
+struct Earthquake: Codable, Hashable, Identifiable {
+    let id = UUID()
     let date, time, latitude, longitude: String
     let depth, md, ml, mw: String
     let location: String

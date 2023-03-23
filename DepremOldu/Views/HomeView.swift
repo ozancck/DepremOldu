@@ -9,18 +9,40 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var earthquakesService = EarhtquakesService()
+    @State private var searchText = ""
 
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             VStack {
-                List(earthquakesService.earthquakes, id: \.self) { element in
-                    CellView(location: element.location, date: element.date, time: element.time, magnitude: element.ml)
-                        
-                }.listStyle(.inset)
-                    .refreshable {
-                        earthquakesService.fetchEarthquakes()
+                ScrollView {
+                    VStack {
+                        ForEach(earthquakesService.earthquakes, id: \.id) { element in
+
+                            if searchText == "" {
+                                NavigationLink {
+                                    DetailsView(name: element.location, latitude: element.latitude, longitude: element.longitude, magnitude: element.ml, depth: element.depth, date: element.date, time: element.time)
+                                } label: {
+                                    CellView(location: element.location, date: element.date, time: element.time, magnitude: element.ml)
+                                }
+
+                            } else {
+                                if element.location.lowercased().contains(searchText.lowercased()) {
+                                    NavigationLink {
+                                        DetailsView(name: element.location, latitude: element.latitude, longitude: element.longitude, magnitude: element.ml, depth: element.depth, date: element.date, time: element.time)
+                                    } label: {
+                                        CellView(location: element.location, date: element.date, time: element.time, magnitude: element.ml)
+                                    }
+                                }
+                            }
+                        }
                     }
-                    .navigationTitle("Tüm Depremler")
+                }
+                .searchable(text: $searchText, prompt: "Ara")
+
+                .navigationBarTitle("Son Depremler")
+                .refreshable(action: {
+                    earthquakesService.fetchEarthquakes()
+                })
 
             }.onAppear {
                 earthquakesService.fetchEarthquakes()

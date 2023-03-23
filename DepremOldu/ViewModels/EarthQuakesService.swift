@@ -20,7 +20,6 @@ class EarhtquakesService: ObservableObject {
         AF.request("https://www.mertsenturk.net/deprem/api/limit/500", method: .get).responseDecodable(of:Quake.self) { response in
             switch response.result {
             case let .success(data):
-
                 self.earthquakes = data
 
             case let .failure(error):

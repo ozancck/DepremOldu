@@ -14,18 +14,15 @@ struct MyTabView: View {
                 .tabItem {
                     Label("Tüm Depremler", systemImage: "waveform.path.ecg.rectangle.fill")
                 }
-                .navigationTitle("Son Depremler")
+                
 
             RedOneView()
                 .tabItem {
-                    Label("Buyuk Depremler", systemImage: "alarm.waves.left.and.right.fill")
+                    Label("Büyük Depremler", systemImage: "alarm.waves.left.and.right.fill")
                 }
             
-            RedOneView()
-                .tabItem {
-                    Label("Settings", systemImage: "apple.logo")
-                }
         }
+        .tableStyle(.inset)
     }
 }
 
