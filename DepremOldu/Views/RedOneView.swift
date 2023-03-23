@@ -38,11 +38,11 @@ struct RedOneView: View {
                 }
                 .navigationBarTitle("Büyük Depremler")
                 .refreshable(action: {
-                    earthquakesService.fetchEarthquakes()
+                    earthquakesService.fetchEarthquakes(param: 500)
                 })
 
             }.onAppear {
-                earthquakesService.fetchEarthquakes()
+                earthquakesService.fetchEarthquakes(param: 500)
             }
         }
     }

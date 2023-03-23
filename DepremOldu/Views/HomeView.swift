@@ -41,11 +41,11 @@ struct HomeView: View {
 
                 .navigationBarTitle("Son Depremler")
                 .refreshable(action: {
-                    earthquakesService.fetchEarthquakes()
+                    earthquakesService.fetchEarthquakes(param: 100)
                 })
 
             }.onAppear {
-                earthquakesService.fetchEarthquakes()
+                earthquakesService.fetchEarthquakes(param: 100)
             }
         }
     }

@@ -11,13 +11,10 @@ import SwiftUI
 
 class EarhtquakesService: ObservableObject {
     @Published var earthquakes = [Earthquake]()
-    
-    init(){
-        fetchEarthquakes()
-    }
+   
 
-    func fetchEarthquakes() {
-        AF.request("https://www.mertsenturk.net/deprem/api/limit/500", method: .get).responseDecodable(of:Quake.self) { response in
+    func fetchEarthquakes(param: Int) {
+        AF.request("https://www.mertsenturk.net/deprem/api/limit/\(param)", method: .get).responseDecodable(of:Quake.self) { response in
             switch response.result {
             case let .success(data):
                 self.earthquakes = data
