@@ -10,13 +10,13 @@ import SwiftUI
 struct MyTabView: View {
     var body: some View {
         TabView {
-            HomeView()
+            AllEarthquakeView()
                 .tabItem {
                     Label("Tüm Depremler", systemImage: "waveform.path.ecg.rectangle.fill")
                 }
                 
 
-            RedOneView()
+            FilterEarthquakeView()
                 .tabItem {
                     Label("Büyük Depremler", systemImage: "alarm.waves.left.and.right.fill")
                 }

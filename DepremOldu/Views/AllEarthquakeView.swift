@@ -1,13 +1,13 @@
 //
-//  HomeView.swift
+//  AllEarthquakeView.swift
 //  DepremOldu
 //
-//  Created by Ozan Çiçek on 20.03.2023.
+//  Created by Ozan Çiçek on 24.03.2023.
 //
 
 import SwiftUI
 
-struct HomeView: View {
+struct AllEarthquakeView: View {
     @StateObject var earthquakesService = EarhtquakesService()
     @State private var searchText = ""
 
@@ -51,8 +51,8 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct AllEarthquakeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        AllEarthquakeView()
     }
 }
