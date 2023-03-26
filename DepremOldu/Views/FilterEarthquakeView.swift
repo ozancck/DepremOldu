@@ -40,6 +40,9 @@ struct FilterEarthquakeView: View {
                 .refreshable(action: {
                     earthquakesService.fetchEarthquakes(param: 500)
                 })
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(height: 1)
 
             }.onAppear {
                 earthquakesService.fetchEarthquakes(param: 500)

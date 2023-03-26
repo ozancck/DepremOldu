@@ -28,7 +28,7 @@ struct DetailsView: View {
                 VStack {
                     Text(cellViewModel.splitText(param: name))
                         .bold()
-                        .font(.largeTitle)
+                        .font(.title2)
                         .foregroundColor(.white)
                         .padding()
                 }
@@ -41,47 +41,48 @@ struct DetailsView: View {
                         HStack {
                             Text("Tarih:")
                                 .foregroundColor(.white)
-                                .font(.title2)
+                                .font(.caption)
 
                             Text("\(date)")
                                 .foregroundColor(.white)
-                                .font(.title2)
-                                .bold()
+                                .font(.caption)
                                 .italic()
+                                .bold()
                             Spacer()
                         }
-                        .padding()
+                        .padding(.horizontal)
+                        .padding(.top)
 
                         HStack {
                             Text("Saat:")
                                 .foregroundColor(.white)
-                                .font(.title2)
+                                .font(.caption)
 
                             Text("\(time)")
                                 .foregroundColor(.white)
-                                .font(.title2)
-                                .bold()
+                                .font(.caption)
                                 .italic()
+                                .bold()
                             Spacer()
                         }
                         .padding(.horizontal)
-                        .padding(.bottom)
 
                         HStack {
                             Text("Derinlik:")
                                 .foregroundColor(.white)
-                                .font(.title2)
+                                .font(.caption)
 
                             Text("\(depth)KM")
                                 .foregroundColor(.white)
                                 .italic()
-                                .font(.title2)
+                                .font(.caption)
                                 .bold()
 
                             Spacer()
                         }
-                        .padding(.bottom)
+
                         .padding(.horizontal)
+                        .padding(.bottom)
                     }
 
                     ZStack {
@@ -103,14 +104,14 @@ struct DetailsView: View {
 
                 Spacer()
             }
-            .scaleEffect(0.9)
-            .navigationTitle("Detay")
+
+            .padding(.bottom, 75)
         }
     }
 }
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(name: "ankara", latitude: "38.485", longitude: "38.825", magnitude: "5.7", depth: "33", date: "22-33-2222", time: "12:22")
+        DetailsView(name: "KAHRAMANMARAS", latitude: "38.485", longitude: "38.825", magnitude: "5.7", depth: "33", date: "22-33-2222", time: "12:22")
     }
 }
