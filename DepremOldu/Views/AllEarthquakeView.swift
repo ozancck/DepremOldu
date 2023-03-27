@@ -10,12 +10,13 @@ import SwiftUI
 struct AllEarthquakeView: View {
     @StateObject var earthquakesService = EarhtquakesService()
     @State private var searchText = ""
+    @State private var fetchCount = 20
 
     var body: some View {
         NavigationStack {
             VStack {
                 ScrollView {
-                    VStack {
+                    LazyVStack {
                         ForEach(earthquakesService.earthquakes, id: \.id) { element in
 
                             if searchText == "" {
@@ -35,17 +36,23 @@ struct AllEarthquakeView: View {
                                 }
                             }
                         }
+                        ProgressView()
+                            .progressViewStyle(.circular)
+                            .onAppear {
+                                self.fetchCount = self.fetchCount + 20
+                                earthquakesService.fetchEarthquakes(param: fetchCount)
+                            }
                     }
                 }
                 .searchable(text: $searchText, prompt: "Ara")
 
                 .navigationBarTitle("Son Depremler")
                 .refreshable(action: {
-                    earthquakesService.fetchEarthquakes(param: 100)
+                    earthquakesService.fetchEarthquakes(param: fetchCount)
                 })
 
             }.onAppear {
-                earthquakesService.fetchEarthquakes(param: 100)
+                earthquakesService.fetchEarthquakes(param: fetchCount)
             }
         }
     }
