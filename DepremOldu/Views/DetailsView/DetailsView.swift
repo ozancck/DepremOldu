@@ -10,7 +10,6 @@ import SwiftUI
 
 struct DetailsView: View {
     @StateObject var cellViewModel = CellViewModel()
-
     @State var name: String
     @State var latitude: String
     @State var longitude: String

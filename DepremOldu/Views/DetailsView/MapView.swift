@@ -15,7 +15,7 @@ struct MapView: View {
     init(latitude: Double, longitude: Double) {
         _region = State(initialValue: MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude),
-            span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+            span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
         ))
         
         self.annotations = [Location(id: 1, coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))]
@@ -25,6 +25,7 @@ struct MapView: View {
     var body: some View {
         Map(coordinateRegion: $region, annotationItems: annotations) { location in
             MapPin(coordinate: location.coordinate)
+            
         }
     }
 }

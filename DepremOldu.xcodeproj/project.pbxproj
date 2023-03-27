@@ -14,6 +14,9 @@
 		317ED86029CDA8B4009A04D9 /* FilterEarthquakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317ED85F29CDA8B4009A04D9 /* FilterEarthquakeView.swift */; };
 		317ED86229CDA90B009A04D9 /* AllEarthquakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317ED86129CDA90B009A04D9 /* AllEarthquakeView.swift */; };
 		317ED86429CDAFAD009A04D9 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317ED86329CDAFAD009A04D9 /* SplashView.swift */; };
+		318C760A29D197AF00FED8E0 /* FilterV2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318C760929D197AF00FED8E0 /* FilterV2View.swift */; };
+		318C760D29D198F800FED8E0 /* FilterV2CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318C760C29D198F800FED8E0 /* FilterV2CellView.swift */; };
+		318C760F29D1B65400FED8E0 /* FilterV2DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318C760E29D1B65400FED8E0 /* FilterV2DetailsView.swift */; };
 		31E4260929C7B2FA00B22D10 /* DepremOlduApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E4260829C7B2FA00B22D10 /* DepremOlduApp.swift */; };
 		31E4260B29C7B2FA00B22D10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E4260A29C7B2FA00B22D10 /* ContentView.swift */; };
 		31E4260D29C7B2FB00B22D10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31E4260C29C7B2FB00B22D10 /* Assets.xcassets */; };
@@ -32,6 +35,9 @@
 		317ED85F29CDA8B4009A04D9 /* FilterEarthquakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterEarthquakeView.swift; sourceTree = "<group>"; };
 		317ED86129CDA90B009A04D9 /* AllEarthquakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEarthquakeView.swift; sourceTree = "<group>"; };
 		317ED86329CDAFAD009A04D9 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		318C760929D197AF00FED8E0 /* FilterV2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterV2View.swift; sourceTree = "<group>"; };
+		318C760C29D198F800FED8E0 /* FilterV2CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterV2CellView.swift; sourceTree = "<group>"; };
+		318C760E29D1B65400FED8E0 /* FilterV2DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterV2DetailsView.swift; sourceTree = "<group>"; };
 		31E4260529C7B2FA00B22D10 /* DepremOldu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DepremOldu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E4260829C7B2FA00B22D10 /* DepremOlduApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepremOlduApp.swift; sourceTree = "<group>"; };
 		31E4260A29C7B2FA00B22D10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +60,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		318C760B29D198E500FED8E0 /* FilterV2View */ = {
+			isa = PBXGroup;
+			children = (
+				318C760929D197AF00FED8E0 /* FilterV2View.swift */,
+				318C760C29D198F800FED8E0 /* FilterV2CellView.swift */,
+				318C760E29D1B65400FED8E0 /* FilterV2DetailsView.swift */,
+			);
+			path = FilterV2View;
+			sourceTree = "<group>";
+		};
 		31E425FC29C7B2FA00B22D10 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +128,7 @@
 		31E4261F29C7B6EF00B22D10 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				318C760B29D198E500FED8E0 /* FilterV2View */,
 				31FCE3F129CCA2E500415B84 /* DetailsView */,
 				317ED86129CDA90B009A04D9 /* AllEarthquakeView.swift */,
 				317ED86329CDAFAD009A04D9 /* SplashView.swift */,
@@ -207,7 +224,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				318C760D29D198F800FED8E0 /* FilterV2CellView.swift in Sources */,
 				31E4260B29C7B2FA00B22D10 /* ContentView.swift in Sources */,
+				318C760A29D197AF00FED8E0 /* FilterV2View.swift in Sources */,
 				3160542329CC959C00407DED /* DetailsView.swift in Sources */,
 				31E4260929C7B2FA00B22D10 /* DepremOlduApp.swift in Sources */,
 				31FCE3F329CCA2F600415B84 /* MapView.swift in Sources */,
@@ -217,6 +236,7 @@
 				3120A04E29CA119700A0B55C /* CellViewModel.swift in Sources */,
 				31E4261B29C7B36800B22D10 /* EarthQuakesService.swift in Sources */,
 				317ED86429CDAFAD009A04D9 /* SplashView.swift in Sources */,
+				318C760F29D1B65400FED8E0 /* FilterV2DetailsView.swift in Sources */,
 				317ED86029CDA8B4009A04D9 /* FilterEarthquakeView.swift in Sources */,
 				31E4261829C7B33100B22D10 /* EarthquakeModel.swift in Sources */,
 			);
